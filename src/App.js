@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import UserLogin from "./UserLogin"
+import RestourantLogin from "./RestourantLogin"
+import React from 'react';
+import Register from "./Register"
+import ForgetPassword from "./ForgetPasswordPage";
+import User from "./User";
+import EnterPage from "./EnterPage";
+import Restourant from "./Restourant";
+import {BrowserRouter as Router ,Route,Switch} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+      <Route exact path="/" component={EnterPage} />
+
+      <Route exact path="/UserLogin" component={UserLogin} />
+      <Route exact path="/RestourantLogin" component={RestourantLogin} />
+
+      <Route exact path="/User" component={User}/>
+      <Route exact path="/Restourant" component={Restourant}/>
+
+      <Route exact path="/register" component={Register}/>
+      <Route exact path="/forgetpassword" component={ForgetPassword} />
+
+      </Switch>
+    </Router>
   );
 }
 
