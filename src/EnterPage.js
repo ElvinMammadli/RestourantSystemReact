@@ -14,7 +14,7 @@ const  Enter = props =>{
     return (
         <div>
                      <button onClick={onClickUser}  >User Login</button>
-                     <button onClick={onClickRestourant}  >Resoturant Login</button>
+                     <button onClick={onClickRestourant}  >Restourant Login</button>
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import React from 'react';
-import Example from './Sidebar';
+import Navbar from './NavbarUser';
 function Restourant(){
     return (
       
         <div>
-            <h1>WELCOME TO RESTOURANT PAGE</h1>
-            <Example />
+            <Navbar />
         </div>
       
     )

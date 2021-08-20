@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './NavbarUser';
 
-function User(){
+function AboutUs(){
     return (
         <div>
             <Navbar />
-            <h1>Last reservations will come to here!</h1>
+            <h1>Elvin Mammadli!</h1>
         </div>
     )
 }
 
-export default User;
+export default AboutUs;
