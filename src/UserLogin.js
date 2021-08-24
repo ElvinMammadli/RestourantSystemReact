@@ -7,7 +7,6 @@ const Login = props => {
   const [password, setPassword] = useState();
   const [error, setError] = useState();
 
- 
 
   const onClickLogin = async event => {
 
@@ -30,9 +29,14 @@ const Login = props => {
       config: { headers: {'Content-Type': 'multipart/form-data' }}
       })
       .then(function (response) {
-          push('/User');
+        console.log(response.data);
+        localStorage.setItem('userName', response.data.username);
+        localStorage.setItem('userPassword', response.data.password);
+        localStorage.setItem('userId', response.data.id);
+       
 
-          console.log(response.data);
+        push('/user');
+         
       })
       .catch(function (error) {
           //handle error

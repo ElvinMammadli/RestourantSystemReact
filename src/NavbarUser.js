@@ -7,11 +7,12 @@ import {
   Nav,
   NavItem,
   NavLink,
+  NavbarText
 } from 'reactstrap';
 
 const NavbarUser = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const a=localStorage.getItem("userName");
   const toggle = () => setIsOpen(!isOpen);
 
   return (
@@ -31,6 +32,8 @@ const NavbarUser = (props) => {
               <NavLink href="/">Log Out</NavLink>
             </NavItem>
           </Nav>
+          <NavbarText > {a}</NavbarText>
+
         </Collapse>
       </Navbar>
     </div>
