@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-date-picker';
 
-function Datepicker() {
+export default function Datepicker() {
   const [value, onChange] = useState(new Date());
-  console.log(value.date);
+
+  function cahgend(){
+    /*value.setHours(11,40,10);
+    console.log(value)
+    */
+  }
   return (
     <div>
       <DatePicker
         onChange={onChange}
+      
         value={value}
       />
-      
     </div>
   );
 }
-export default Datepicker;

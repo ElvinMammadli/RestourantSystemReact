@@ -3,8 +3,11 @@ import Navbar from "./NavbarUser";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import axios from "axios";
+//import Datepicker from './DatePicker'
+import DatePicker from "react-date-picker";
 
 export default class Reservation extends Component {
+
   state = {
     options: [
       "09:00",
@@ -23,36 +26,35 @@ export default class Reservation extends Component {
     selectedClock: "",
     selectedConsumers: "",
     selectedRestourant: "",
-    selectedTime: "",
+    selectedTime: ""
   };
-   
 
   onClickLogin() {
-    var cor = {
-      date:"17:65",
-      user:{
-        id:"2"
-      },
-      restourant:{
-        id:"1"
-      }
-    }
-    axios({
-      method: 'post',
-      url: 'http://localhost:8080/api/1/create/reservation',
-      data: cor,
-      config: { headers: {'Content-Type': 'multipart/form-data' }}
-      })
-      .then(function (response) {
 
-          console.log(response.data);
+    var cor = {
+      date: "23:00",
+      user: {
+        id: "3",
+      },
+      restourant: {
+        id: "1",
+      },
+    };
+    axios({
+      method: "post",
+      url: "http://localhost:8080/api/1/create/reservation",
+      data: cor,
+      config: { headers: { "Content-Type": "multipart/form-data" } },
+    })
+      .then(function (response) {
+        console.log(response.data);
       })
       .catch(function (error) {
-          //handle error
-          console.log(error.response.data);
+        //handle error
+        console.log(error.response.data);
       });
   }
-
+  
   handleChangeRestourant = (selectedRestourant) => {
     this.setState({ selectedRestourant });
     console.log(`Restourant selected:`, selectedRestourant.value);
@@ -69,7 +71,7 @@ export default class Reservation extends Component {
   };
 
   handleChangeTime = (selectedTime) => {
-    this.setState({ selectedTime });
+    this.setState({ selectedTime : selectedTime });
     console.log(`Time selected:`, selectedTime);
   };
 
@@ -124,6 +126,7 @@ export default class Reservation extends Component {
           <label>
             Select your date:
             <br />
+            <DatePicker onChange={this.handleChangeTime} />
           </label>
           <br />
           <label>
